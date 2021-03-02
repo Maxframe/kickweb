@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+body {
+    font-family: 'Prompt', sans-serif;
+}
+
+
+.container {
+    margin: auto;
+    max-width: 800px;
+}
+.titletext {
+    text-transform: uppercase;
+    font-family: 'Anton', sans-serif;
+    font-size: 55pt;
+}
+.largeimage {
+    max-width: 100%;
+    height: auto;
+}
