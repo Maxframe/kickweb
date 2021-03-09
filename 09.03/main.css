@@ -1,0 +1,31 @@
+.width {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+.pics {
+    width: 200px;
+}
+.imgcontainer {
+    text-align: center;
+}
+
+.ex1_img3 {
+    float: right;
+}
+
+.ex2_img1 {
+    position: absolute;
+}
+
+.ex2_img2 {
+    position: absolute;
+    display: none;
+    transition: ease-in-out;
+}
+
+.ex2_img1:hover ~ .ex2_img2 {
+    display: block;
+    right: 0;
+}
