@@ -1,0 +1,62 @@
+@import url("https://use.typekit.net/geq1wgu.css");
+
+body, h1, h2, h3, h4, h5, p {
+    font-family: futura-pt, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(45, 49, 71);
+    overflow: hidden;
+
+}
+
+.wrap {
+    display: inline-block;
+    width: 49.5vw;
+    text-align: center;
+    margin: 44vh 0 0 0;
+    padding: 0;
+}
+
+.a {
+    animation: hop 2s linear infinite;
+}
+
+.b {
+    animation: hop 2s linear infinite 1s;
+}
+
+span {
+    color: #c5c1f3;
+    font-size: 6rem;
+    letter-spacing: 0.5rem;
+}
+
+
+.linewrap {
+    margin: auto;
+    text-align: center;
+}
+.line {
+    display: inline-block;
+    height: 0.4rem;
+    background-color: #c5c1f3;
+    width: 30%;
+    margin: 0 9.8% 0;
+    padding: 0;
+}
+
+@keyframes hop { 
+    25% {transform: translate(0, 0);
+        animation-timing-function: cubic-bezier(.22,.61,.36,1);
+    }
+    50% {transform: translate(0, -10rem); 
+        animation-timing-function: cubic-bezier(.55,.06,.68,.19);
+    }
+    75% {transform: translate(0, 0);
+        animation-timing-function: linear
+    }
+}
+

@@ -1,0 +1,92 @@
+@import url("https://use.typekit.net/geq1wgu.css");
+body, h1, h2, h3, h4, h5, p {
+  font-family: futura-pt, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2d3147;
+  overflow: hidden;
+}
+
+.wrap {
+  display: inline-block;
+  width: 49.5vw;
+  text-align: center;
+  margin: 44vh 0 0 0;
+  padding: 0;
+}
+
+.a {
+  -webkit-animation: hop 2s linear infinite;
+          animation: hop 2s linear infinite;
+}
+
+.b {
+  -webkit-animation: hop 2s linear infinite 1s;
+          animation: hop 2s linear infinite 1s;
+}
+
+span {
+  color: #c5c1f3;
+  font-size: 6rem;
+  letter-spacing: 0.5rem;
+}
+
+.linewrap {
+  margin: auto;
+  text-align: center;
+}
+
+.line {
+  display: inline-block;
+  height: 0.4rem;
+  background-color: #c5c1f3;
+  width: 30%;
+  margin: 0 9.8% 0;
+  padding: 0;
+}
+
+@-webkit-keyframes hop {
+  25% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+            animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  50% {
+    -webkit-transform: translate(0, -10rem);
+            transform: translate(0, -10rem);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  }
+  75% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+
+@keyframes hop {
+  25% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+            animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  50% {
+    -webkit-transform: translate(0, -10rem);
+            transform: translate(0, -10rem);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  }
+  75% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+}
+/*# sourceMappingURL=ueb3.css.map */
