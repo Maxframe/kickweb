@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.items {
+    text-align: center;
+    width: 33.3%;
+    height: 6rem;
+    background-color: aquamarine;
+    box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.192);
+}
