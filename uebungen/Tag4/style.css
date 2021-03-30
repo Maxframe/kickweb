@@ -1,7 +1,14 @@
-body {
+@import url("https://use.typekit.net/geq1wgu.css");
+
+body, h1, h2, h3, h4, h5, p {
+    font-family: futura-pt, sans-serif;
     margin: 0;
     padding: 0;
+    color: #fff;
+    font-size: 5.5rem;
+    font-weight: 600;
 }
+
 
 .box {
     display: flex;

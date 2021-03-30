@@ -79,8 +79,7 @@ h1, h2, h3, h4, h5, p {
   left: 4.2vh;
   font-size: 42vh;
   font-weight: 400;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg) rotateY(0deg);
 }
 
 
@@ -100,80 +99,77 @@ h1, h2, h3, h4, h5, p {
 }
  */
 
- .circle1 {
-   position: absolute;
-   width: calc(var(--circle1size) * 2);
-   height: calc(var(--circle1size) * 2);
-   overflow: hidden;
-   box-sizing: border-box;
-   background: var(--color2);
-   top: 18.6vh;
-   left: 32.2vh;
-   transform: rotate(-90deg);
-   animation: c_c 0s linear 0s forwards;
-   
-   @keyframes c_c {
-     100% {
-       top: calc(45vh - var(--circle1size));
-       left: calc(45vh - var(--circle1size));    
+.circle1 {
+  position: absolute;
+  width: calc(var(--circle1size) * 2);
+  height: calc(var(--circle1size) * 2);
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--color2);
+  top: 18.6vh;
+  left: 32.2vh;
+  transform: rotateY(0) rotate(-90deg);
+  animation: c_c 0s linear 0s forwards;
+  
+  /*@keyframes c_c {
+    100% {
+      top: calc(45vh - var(--circle1size));
+      left: calc(45vh - var(--circle1size));    
+  }*/
+}
+  
+.pie {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border: var(--circle1size) solid var(--color1);
+}
+
+.spinner {
+  border-radius: calc(var(--circle1size)) 0 0 calc(var(--circle1size));
+  z-index: 1;
+  border-right: none;
+  transform-origin: right;
+  transform: rotate(360deg);
+  animation: c_rot 1s linear 1s forwards;
+  
+  @keyframes c_rot {
+    0%   {
+      transform: rotate(360deg);
+      animation-timing-function: cubic-bezier(.22,.61,.36,1); 
+    }
+      100% { transform: rotate(180deg); }
     }
   }
-    
-  .pie {
+  
+  .filler {
+    border-radius: 0 calc(var(--circle1size)) calc(var(--circle1size)) 0;
+    z-index: 2;
+    border-left: none;
+    left: 49.97%;
+    opacity: 0;
+    animation: fill 2s steps(1, end) 2.5s forwards;
+    @keyframes fill {
+      0%        { opacity: 1; }
+      20%, 100% { opacity: 0; }
+    }
+  }
+  
+  .mask {
+    width: 52%;
+    height: 110%;
+    transform: translate(-2%,-5%);
     position: absolute;
-    width: 50%;
-    height: 100%;
-    border: var(--circle1size) solid var(--color1);
+    z-index: 3;
+    opacity: 1;
+    background: inherit;
+    animation: mask 2s steps(1, end) 2.5s forwards;
+    /*@keyframes mask {
+      0%        { opacity: 0; }
+      20%, 100% { opacity: 1; }
+    }*/
   }
 
-  .spinner {
-    border-radius: calc(var(--circle1size)) 0 0 calc(var(--circle1size));
-    z-index: 1;
-    border-right: none;
-    transform-origin: right;
-    transform: rotate(0deg);
-    animation: c_rot 4s linear forwards 2.5s;
-    
-    @keyframes c_rot {
-      0%   {
-        transform: rotate(0deg);
-        animation-timing-function: cubic-bezier(.22,.61,.36,1); }
-        100% { transform: rotate(180deg); }
-      }
-    }
-    
-    .filler {
-      border-radius: 0 calc(var(--circle1size)) calc(var(--circle1size)) 0;
-      z-index: 2;
-      border-left: none;
-      left: 50%;
-      opacity: 0;
-      transition: 1s ease-in-out;
-      
-      animation: fill 10s steps(1, end) infinite;
-      /* @keyframes fill {
-        0%        { opacity: 0; }
-        50%, 100% { opacity: 1; }
-      } */
-    }
-    
-    .mask {
-      width: 52%;
-      height: 102%;
-      position: absolute;
-      z-index: 3;
-      opacity: 1;
-      background: inherit;
-      transition: 1s ease-in-out;
-      
-      animation: mask 10s steps(1, end) infinite;
-      /* @keyframes mask {
-        0%        { opacity: 1; }
-        50%, 100% { opacity: 0; }
-      } */
-    }
-
-  }
 
 
 .circle2 {
@@ -230,12 +226,12 @@ h1, h2, h3, h4, h5, p {
     100% {
       width: calc(var(--circle1size) * 2);
       height: calc(var(--circle1size) * 2);
+      opacity: 0;
     }
   }
 
   @keyframes circint3 {
     100% {
-     opacity: 0;
     }
   }
 }
@@ -313,7 +309,7 @@ h1, h2, h3, h4, h5, p {
 .line7 {
   position: absolute;
   top: 68.7vh;
-  left: 31.6vh;
+  left: 31.4vh;
   background: var(--color1);
   width: var(--lineheight2);
   height: 44vh;
@@ -393,4 +389,3 @@ h1, h2, h3, h4, h5, p {
   line-height: 1.6;
   color: var(--color1);
 }
-/*# sourceMappingURL=plakat.css.map */

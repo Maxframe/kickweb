@@ -1,0 +1,81 @@
+@import url("https://use.typekit.net/geq1wgu.css");
+
+body, h1, h2, h3, h4, h5, p {
+    font-family: futura-pt, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 5.5rem;
+    font-weight: 600;
+}
+
+body {
+    background-color: rgb(75, 136, 67);
+    overflow: hidden;
+    transition: 1s ease;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.letter {
+    border: dashed 1px #fff;
+    width: 6rem;
+}
+
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 10vh;
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        background-color: rgb(190, 156, 62);
+    }
+
+    .l2 {
+        order: 0;
+    }
+    .l3 {
+        order: 1;
+    }
+    .l4 {
+        order: 2;
+    }
+    .l7 {
+        order: 3;
+    }
+    .l1 {
+        order: 4;
+    }
+    .l6 {
+        order: 5;
+    }
+    .l8 {
+        order: 6;
+    }
+    .l5 {
+        order: 7;
+    }
+    .l7 {
+        order: 8;
+    }
+    .l9 {
+        order: 9;
+    }
+    .l10 {
+        order: 9;
+    }
+}

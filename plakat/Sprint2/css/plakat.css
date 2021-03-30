@@ -76,8 +76,8 @@ h1, h2, h3, h4, h5, p {
   left: 4.2vh;
   font-size: 42vh;
   font-weight: 400;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg) rotateY(0deg);
+          transform: rotate(-90deg) rotateY(0deg);
 }
 
 /*
@@ -102,49 +102,40 @@ h1, h2, h3, h4, h5, p {
   background: var(--color2);
   top: 18.6vh;
   left: 32.2vh;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  -webkit-transform: rotateY(0) rotate(-90deg);
+          transform: rotateY(0) rotate(-90deg);
   -webkit-animation: c_c 0s linear 0s forwards;
           animation: c_c 0s linear 0s forwards;
+  /*@keyframes c_c {
+    100% {
+      top: calc(45vh - var(--circle1size));
+      left: calc(45vh - var(--circle1size));    
+  }*/
 }
 
-@-webkit-keyframes c_c {
-  100% {
-    top: calc(45vh - var(--circle1size));
-    left: calc(45vh - var(--circle1size));
-  }
-}
-
-@keyframes c_c {
-  100% {
-    top: calc(45vh - var(--circle1size));
-    left: calc(45vh - var(--circle1size));
-  }
-}
-
-.circle1 .pie {
+.pie {
   position: absolute;
   width: 50%;
   height: 100%;
   border: var(--circle1size) solid var(--color1);
 }
 
-.circle1 .spinner {
+.spinner {
   border-radius: calc(var(--circle1size)) 0 0 calc(var(--circle1size));
   z-index: 1;
   border-right: none;
   -webkit-transform-origin: right;
           transform-origin: right;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-animation: c_rot 4s linear forwards 2.5s;
-          animation: c_rot 4s linear forwards 2.5s;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-animation: c_rot 1s linear 1s forwards;
+          animation: c_rot 1s linear 1s forwards;
 }
 
 @-webkit-keyframes c_rot {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
     -webkit-animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
             animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
   }
@@ -156,8 +147,8 @@ h1, h2, h3, h4, h5, p {
 
 @keyframes c_rot {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
     -webkit-animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
             animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
   }
@@ -167,37 +158,49 @@ h1, h2, h3, h4, h5, p {
   }
 }
 
-.circle1 .filler {
+.filler {
   border-radius: 0 calc(var(--circle1size)) calc(var(--circle1size)) 0;
   z-index: 2;
   border-left: none;
-  left: 50%;
+  left: 49.97%;
   opacity: 0;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-  -webkit-animation: fill 10s steps(1, end) infinite;
-          animation: fill 10s steps(1, end) infinite;
-  /* @keyframes fill {
-        0%        { opacity: 0; }
-        50%, 100% { opacity: 1; }
-      } */
+  -webkit-animation: fill 2s steps(1, end) 2.5s forwards;
+          animation: fill 2s steps(1, end) 2.5s forwards;
 }
 
-.circle1 .mask {
+@-webkit-keyframes fill {
+  0% {
+    opacity: 1;
+  }
+  20%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fill {
+  0% {
+    opacity: 1;
+  }
+  20%, 100% {
+    opacity: 0;
+  }
+}
+
+.mask {
   width: 52%;
-  height: 102%;
+  height: 110%;
+  -webkit-transform: translate(-2%, -5%);
+          transform: translate(-2%, -5%);
   position: absolute;
   z-index: 3;
   opacity: 1;
   background: inherit;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-  -webkit-animation: mask 10s steps(1, end) infinite;
-          animation: mask 10s steps(1, end) infinite;
-  /* @keyframes mask {
-        0%        { opacity: 1; }
-        50%, 100% { opacity: 0; }
-      } */
+  -webkit-animation: mask 2s steps(1, end) 2.5s forwards;
+          animation: mask 2s steps(1, end) 2.5s forwards;
+  /*@keyframes mask {
+      0%        { opacity: 0; }
+      20%, 100% { opacity: 1; }
+    }*/
 }
 
 .circle2 {
@@ -266,6 +269,7 @@ h1, h2, h3, h4, h5, p {
   100% {
     width: calc(var(--circle1size) * 2);
     height: calc(var(--circle1size) * 2);
+    opacity: 0;
   }
 }
 
@@ -273,18 +277,17 @@ h1, h2, h3, h4, h5, p {
   100% {
     width: calc(var(--circle1size) * 2);
     height: calc(var(--circle1size) * 2);
+    opacity: 0;
   }
 }
 
 @-webkit-keyframes circint3 {
   100% {
-    opacity: 0;
   }
 }
 
 @keyframes circint3 {
   100% {
-    opacity: 0;
   }
 }
 
@@ -354,7 +357,7 @@ h1, h2, h3, h4, h5, p {
 .line7 {
   position: absolute;
   top: 68.7vh;
-  left: 31.6vh;
+  left: 31.4vh;
   background: var(--color1);
   width: var(--lineheight2);
   height: 44vh;
